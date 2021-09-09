@@ -1,0 +1,41 @@
+{
+  "name": "we-solo-project",
+  "version": "1.0.0",
+  "description": "WebEngineering solo project WS2021",
+  "main": "index.js",
+  "scripts": {
+    "serve": "webpack serve --config ./webpack.dev.js",
+    "prod": "webpack --config ./webpack.prod.js",
+    "test": "./node_modules/.bin/eslint ./src"
+  },
+  "author": "Simon Deutsch",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "css-loader": "^6.2.0",
+    "node-sass": "^6.0.1",
+    "postcss-import": "^14.0.2",
+    "sass": "^1.39.0",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.4",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4",
+    "html-webpack-plugin": "^5.3.2",
+    "postcss-loader": "^6.1.1",
+    "tailwindcss": "^2.2.14",
+    "webpack": "^5.52.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.1.1"
+  }
+}
