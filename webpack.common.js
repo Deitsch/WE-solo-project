@@ -2,6 +2,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   // 1
@@ -24,6 +25,7 @@ module.exports = {
       title: 'Pokemon Page',
       template: path.resolve(__dirname, './src/index.html'),
     }),
+    new FaviconsWebpackPlugin(),
   ],
   // 5
   // Integrate Babel in the build process
@@ -53,6 +55,10 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif|svg)$/i,
+        type: 'asset/resource',
       },
     ],
   },
