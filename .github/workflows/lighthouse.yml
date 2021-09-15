@@ -18,8 +18,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: yarn install
-      - run: yarn prod
+      - run: npm ci
+      - run: npm run prod
       - run: npm install -g @lhci/cli@0.7.x @lighthouse-test/badge-generator
       - run: lhci autorun
       - run: lighthouse-badge-generator ${{ env.BUILD_PATH }}/_lighthouse
