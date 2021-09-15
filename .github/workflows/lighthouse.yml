@@ -1,4 +1,4 @@
-name: build
+name: lighthouse
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: '14'
       - run: yarn install
-      - run: yarn build
+      - run: yarn prod
       - run: npm install -g @lhci/cli@0.7.x @lighthouse-test/badge-generator
       - run: lhci autorun
       - run: lighthouse-badge-generator ${{ env.BUILD_PATH }}/_lighthouse
