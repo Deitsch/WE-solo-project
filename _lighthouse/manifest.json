@@ -1,19 +1,6 @@
 [
   {
-    "url": "http://localhost:39327/index.html",
-    "isRepresentativeRun": false,
-    "htmlPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_index_html.report.html",
-    "jsonPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_index_html.report.json",
-    "summary": {
-      "performance": 0.93,
-      "accessibility": 1,
-      "best-practices": 1,
-      "seo": 1,
-      "pwa": 0.8
-    }
-  },
-  {
-    "url": "http://localhost:39327/index.html",
+    "url": "http://localhost:35203/index.html",
     "isRepresentativeRun": false,
     "htmlPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_index_html.report.html",
     "jsonPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_index_html.report.json",
@@ -26,7 +13,20 @@
     }
   },
   {
-    "url": "http://localhost:39327/index.html",
+    "url": "http://localhost:35203/index.html",
+    "isRepresentativeRun": false,
+    "htmlPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_index_html.report.html",
+    "jsonPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_index_html.report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1,
+      "pwa": 0.8
+    }
+  },
+  {
+    "url": "http://localhost:35203/index.html",
     "isRepresentativeRun": true,
     "htmlPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_index_html.report.html",
     "jsonPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_index_html.report.json",
