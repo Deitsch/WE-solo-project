@@ -1,9 +1,9 @@
 [
   {
-    "url": "http://localhost:35203/index.html",
+    "url": "http://localhost:37435/index.html",
     "isRepresentativeRun": false,
-    "htmlPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_index_html.report.html",
-    "jsonPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_index_html.report.json",
+    "htmlPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_.report.html",
+    "jsonPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_.report.json",
     "summary": {
       "performance": 1,
       "accessibility": 1,
@@ -13,10 +13,10 @@
     }
   },
   {
-    "url": "http://localhost:35203/index.html",
+    "url": "http://localhost:37435/index.html",
     "isRepresentativeRun": false,
-    "htmlPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_index_html.report.html",
-    "jsonPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_index_html.report.json",
+    "htmlPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_.report.html",
+    "jsonPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_.report.json",
     "summary": {
       "performance": 1,
       "accessibility": 1,
@@ -26,10 +26,10 @@
     }
   },
   {
-    "url": "http://localhost:35203/index.html",
+    "url": "http://localhost:37435/index.html",
     "isRepresentativeRun": true,
-    "htmlPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_index_html.report.html",
-    "jsonPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_index_html.report.json",
+    "htmlPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_.report.html",
+    "jsonPath": "/home/runner/work/WE-solo-project/WE-solo-project/dist/_lighthouse/_.report.json",
     "summary": {
       "performance": 1,
       "accessibility": 1,
