@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 module.exports = {
   ci: {
     // ...
@@ -6,6 +7,12 @@ module.exports = {
       assertions: {
         'service-worker': 'off',
         'maskable-icon': 'off',
+        'csp-xss': 'off',
+      },
+      upload: {
+        target: 'filesystem',
+        outputDir: './dist/_lighthouse',
+        reportFilenamePattern: "%%PATHNAME%%.report.%%EXTENSION%%",
       },
     },
   },
