@@ -1,4 +1,4 @@
-name: lighthouse
+name: Lighthouse
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build_and_publish:
+  build-and-publish:
     runs-on: ubuntu-latest
     env:
       BUILD_PATH: 'build'
@@ -22,13 +22,14 @@ jobs:
       - run: npm run prod
       - run: npm install -g @lhci/cli@0.7.x @lighthouse-test/badge-generator
       - run: lhci autorun
+      - run: ls -la
       - run: lighthouse-badge-generator ${{ env.BUILD_PATH }}/_lighthouse
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
-      - name: Deploy Build & Results to Github Pages
-        uses: peaceiris/actions-gh-pages@v3.7.3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ${{ env.BUILD_PATH }}
+      # - name: Deploy Build & Results to Github Pages
+      #   uses: peaceiris/actions-gh-pages@v3.7.3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_branch: gh-pages
+      #     publish_dir: ${{ env.BUILD_PATH }}
