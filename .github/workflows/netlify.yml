@@ -1,7 +1,7 @@
 name: Netlify Deploy # optional name of workflow; it will be shown in Github Actions tab
 on: # specify events on which the workflow shall be triggered
   push: # when push event occurs
-    branches: [dev] # only when push event on master branch occurs
+    branches: [main] # only when push event on master branch occurs
 jobs: # define jobs to run
   build-and-test: # name of the job; can be anything you like
     runs-on: ubuntu-latest # configures job to run on Ubuntu runner
