@@ -3,7 +3,8 @@
   "extends": "airbnb",
   "rules": {
     "no-console": "off", // to disable warnings when logging to console
-    "arrow-parens": "off"
+    "arrow-parens": "off",
+    "import/extensions": ["error", { "ts": "always" }] // asume imports to be ts files
   },
   "env": {
     "browser": true,

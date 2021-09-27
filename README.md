@@ -10,7 +10,8 @@
 </p>
 
 # poke-page
-Learning project for WebEngineering WS2021. Goal: learn basic with webpack, eslint & co
+Learning project for WebEngineering WS2021. Goal: learn basic with webpack, eslint & co  
+For API demo purposes https://pokeapi.co was used 
 
 # Netflify Settings
 https://app.netlify.com/sites/poke-page/deploys
