@@ -1,7 +1,5 @@
-/* eslint-disable quotes */
 module.exports = {
   ci: {
-    // ...
     assert: {
       preset: 'lighthouse:recommended',
       assertions: {
@@ -12,7 +10,7 @@ module.exports = {
       upload: {
         target: 'filesystem',
         outputDir: './dist/_lighthouse',
-        reportFilenamePattern: "_.report.%%EXTENSION%%",
+        reportFilenamePattern: '_.report.%%EXTENSION%%',
         // reportFilenamePattern: "%%PATHNAME%%.report.%%EXTENSION%%",
       },
     },

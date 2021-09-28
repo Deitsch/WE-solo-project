@@ -49,7 +49,7 @@ function selectPokemon(pokemon: Pokemon) {
   updateTeamSizeInfo();
 }
 
-function loadPokemon(limit: number, offset: number) {
+async function loadPokemon(limit: number, offset: number) {
   // https://pokeapi.co
   axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`).then(response => {
     document.getElementById('pokemon-from-to').innerHTML = `${offset}-${offset + limit}`;
