@@ -7,11 +7,46 @@ import { Pokemon } from './pokemon';
 console.log('Hello npm project!');
 
 const pokemonCount = 20;
+const teamSize = 6;
 let pokemonOffset = 0;
-const myPokemonTeam = [];
+let myPokemonTeam = [];
+
+function setInnerHTML(id: string, value: string = '') {
+  document.getElementById(id).innerHTML = value;
+}
+
+function createPokemonListItem(pokemon: Pokemon, idPrefix: string): string {
+  return `<li id="${idPrefix}-${pokemon.name}" class="my-hover">${pokemon.name}</li>`;
+}
+
+function updateTeamSizeInfo() {
+  document.getElementById('pokemon-team-count').innerHTML = `${myPokemonTeam.length}/${teamSize}`;
+}
+
+function removePokemon(pokemon: Pokemon) {
+  setInnerHTML('pokemon-team-warning');
+  myPokemonTeam = myPokemonTeam.filter(p => p !== pokemon);
+  const prefix = 'team';
+  document.getElementById('pokemon-team-list').innerHTML = myPokemonTeam.map(p => createPokemonListItem(p, prefix)).join('');
+  myPokemonTeam.forEach(p => document.getElementById(`${prefix}-${p.name}`).addEventListener('click', () => removePokemon(p)));
+  updateTeamSizeInfo();
+}
 
 function selectPokemon(pokemon: Pokemon) {
-  console.log(pokemon);
+  setInnerHTML('pokemon-team-warning');
+  if (myPokemonTeam.length >= teamSize) {
+    setInnerHTML('pokemon-team-warning', `Team is full. A team has at max ${teamSize} Pokemon`);
+    return;
+  }
+  if (myPokemonTeam.includes(pokemon)) {
+    setInnerHTML('pokemon-team-warning', 'Pokemon already added');
+    return;
+  }
+  myPokemonTeam = [...myPokemonTeam, pokemon];
+  const prefix = 'team';
+  document.getElementById('pokemon-team-list').innerHTML = myPokemonTeam.map(p => createPokemonListItem(p, prefix)).join('');
+  myPokemonTeam.forEach(p => document.getElementById(`${prefix}-${p.name}`).addEventListener('click', () => removePokemon(p)));
+  updateTeamSizeInfo();
 }
 
 function loadPokemon(limit: number, offset: number) {
@@ -20,14 +55,16 @@ function loadPokemon(limit: number, offset: number) {
     document.getElementById('pokemon-from-to').innerHTML = `${offset}-${offset + limit}`;
     const pokemon: Array<Pokemon> = response.data.results;
     let pokemonList = '';
+    const prefix = 'all';
     pokemon.forEach(p => {
-      pokemonList += `<li id="${p.name}" class="my-hover" >${p.name}</li>`;
+      pokemonList += createPokemonListItem(p, prefix);
     });
     document.getElementById('pokemon-list').innerHTML = pokemonList;
-    pokemon.forEach(p => document.getElementById(p.name).addEventListener('click', () => selectPokemon(p)));
+    pokemon.forEach(p => document.getElementById(`${prefix}-${p.name}`).addEventListener('click', () => selectPokemon(p)));
   });
 }
 
+updateTeamSizeInfo();
 loadPokemon(pokemonCount, pokemonOffset);
 
 function loadNextPokemon() {
