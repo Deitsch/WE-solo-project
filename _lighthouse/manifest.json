@@ -1,19 +1,6 @@
 [
   {
-    "url": "http://localhost:44171/index.html",
-    "isRepresentativeRun": false,
-    "htmlPath": "/home/runner/work/poke-page/poke-page/dist/_lighthouse/_.report.html",
-    "jsonPath": "/home/runner/work/poke-page/poke-page/dist/_lighthouse/_.report.json",
-    "summary": {
-      "performance": 0.89,
-      "accessibility": 1,
-      "best-practices": 1,
-      "seo": 1,
-      "pwa": 0.8
-    }
-  },
-  {
-    "url": "http://localhost:44171/index.html",
+    "url": "http://localhost:33971/index.html",
     "isRepresentativeRun": false,
     "htmlPath": "/home/runner/work/poke-page/poke-page/dist/_lighthouse/_.report.html",
     "jsonPath": "/home/runner/work/poke-page/poke-page/dist/_lighthouse/_.report.json",
@@ -26,7 +13,20 @@
     }
   },
   {
-    "url": "http://localhost:44171/index.html",
+    "url": "http://localhost:33971/index.html",
+    "isRepresentativeRun": false,
+    "htmlPath": "/home/runner/work/poke-page/poke-page/dist/_lighthouse/_.report.html",
+    "jsonPath": "/home/runner/work/poke-page/poke-page/dist/_lighthouse/_.report.json",
+    "summary": {
+      "performance": 0.97,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1,
+      "pwa": 0.8
+    }
+  },
+  {
+    "url": "http://localhost:33971/index.html",
     "isRepresentativeRun": true,
     "htmlPath": "/home/runner/work/poke-page/poke-page/dist/_lighthouse/_.report.html",
     "jsonPath": "/home/runner/work/poke-page/poke-page/dist/_lighthouse/_.report.json",
