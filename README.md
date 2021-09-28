@@ -8,7 +8,6 @@
     <img src="https://deitsch.github.io/poke-page/_lighthouse/_.accessibility.svg" />
     <img src="https://deitsch.github.io/poke-page/_lighthouse/_.best-practices.svg" />
     <img src="https://deitsch.github.io/poke-page/_lighthouse/_.seo.svg" />
-    <img src="https://deitsch.github.io/poke-page/_lighthouse/_.pwa.svg" />
   </a>
 </p>
 
