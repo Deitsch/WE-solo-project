@@ -4,7 +4,8 @@
   "rules": {
     "no-console": "off", // to disable warnings when logging to console
     "arrow-parens": "off",
-    "import/extensions": ["error", { "ts": "always" }] // asume imports to be ts files
+    "import/extensions": ["error", { "ts": "always" }], // asume imports to be ts files
+    "no-unused-vars": "warn"
   },
   "env": {
     "browser": true,

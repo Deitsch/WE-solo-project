@@ -8,6 +8,11 @@ console.log('Hello npm project!');
 
 const pokemonCount = 20;
 let pokemonOffset = 0;
+const myPokemonTeam = [];
+
+function selectPokemon(pokemon: Pokemon) {
+  console.log(pokemon);
+}
 
 function loadPokemon(limit: number, offset: number) {
   // https://pokeapi.co
@@ -16,11 +21,14 @@ function loadPokemon(limit: number, offset: number) {
     const pokemon: Array<Pokemon> = response.data.results;
     let pokemonList = '';
     pokemon.forEach(p => {
-      pokemonList += `<li>${p.name}</li>`;
+      pokemonList += `<li id="${p.name}" class="my-hover" >${p.name}</li>`;
     });
     document.getElementById('pokemon-list').innerHTML = pokemonList;
+    pokemon.forEach(p => document.getElementById(p.name).addEventListener('click', () => selectPokemon(p)));
   });
 }
+
+loadPokemon(pokemonCount, pokemonOffset);
 
 function loadNextPokemon() {
   pokemonOffset += pokemonCount;
@@ -33,11 +41,5 @@ function loadPreviousPokemon() {
   loadPokemon(pokemonCount, pokemonOffset);
 }
 
-// eslint-disable-next-line no-unused-vars
-function selectPokemon(pokemon: Pokemon) {
-  console.log(pokemon);
-}
-
-loadPokemon(pokemonCount, pokemonOffset);
 document.getElementById('pokemon-load-next').addEventListener('click', loadNextPokemon);
 document.getElementById('pokemon-load-previous').addEventListener('click', loadPreviousPokemon);
