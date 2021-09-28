@@ -9,7 +9,7 @@ module.exports = {
   // Use the src/index.js file as entry point to bundle it.
   // If the src/index.js file imports other JS files,
   // bundle them as well
-  entry: path.resolve(__dirname, './src/index.ts'),
+  entry: path.resolve(__dirname, './src/assets/ts/index.ts'),
   // 2
   // The bundles source code files shall result in a bundle.js file
   // in the /dist folder
@@ -24,6 +24,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Pokemon Page',
       template: path.resolve(__dirname, './src/index.html'),
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './src/pages/about.html'),
+      filename: 'about.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './src/pages/regions.html'),
+      filename: 'regions.html',
     }),
     new FaviconsWebpackPlugin(),
   ],

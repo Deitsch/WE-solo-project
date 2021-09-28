@@ -1,4 +1,4 @@
-import './styles/style.scss';
+import '../styles/style.scss';
 import axios from 'axios';
 // TODO: ask leon why this doesnt work!!
 // eslint-disable-next-line import/no-unresolved
