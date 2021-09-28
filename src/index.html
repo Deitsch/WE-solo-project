@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <header class="h-12 w-screen bg-gray-200 shadow px-4">
+    <header class="h-12 bg-gray-200 shadow px-4">
       <nav class="h-full flex items-center justify-between">
         <h1 class="text-deitsch-pink"><%= htmlWebpackPlugin.options.title %></h1>
         <ul class="h-full flex justify-end items-center">
@@ -20,11 +20,13 @@
     </header>
     <main class="px-4">
       <section class="max-w-screen-lg mx-auto">
-        <div class="grid sm:grid-cols-2">
+        <h1 class="pt-3 text-2xl text-deitsch-purple">Pokemon Team Builder</h1>
+        <div class="pt-3">Select Pokemon for you Team. A Team can have 6 Pokemon in total. Each Pokemon may be taken once at max. Click on the Pokemon on the left to select it for you Team. Click on the right lsit to remove them from your team</div>
+        <div class="pt-8 grid sm:grid-cols-2 text-center">
           <div>
             <h2 class="text-deitsch-purple">List of Pokemon [<span id="pokemon-from-to"></span>]</h2>
-            <span id="pokemon-load-previous" class="mr-4 my-hover">&#8592;</span>
-            <span id="pokemon-load-next" class="my-hover">&#8594;</span>
+            <span id="pokemon-load-previous" class="mr-4 my-hover select-none">&#8592;</span>
+            <span id="pokemon-load-next" class="my-hover select-none">&#8594;</span>
             <ul id="pokemon-list" class="pokemon-list"></ul>
           </div>
           <div>
