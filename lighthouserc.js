@@ -6,6 +6,7 @@ module.exports = {
         'service-worker': 'off',
         'maskable-icon': 'off',
         'csp-xss': 'off',
+        'uses-responsive-images': 'off', // cause i don't care for displaying the min size possible in this project
       },
       upload: {
         target: 'filesystem',

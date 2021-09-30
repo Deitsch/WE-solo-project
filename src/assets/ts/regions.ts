@@ -19,9 +19,13 @@ function regionComponent(title: string, text: string, image: any): HTMLElement {
   wrapper.classList.add('region-component');
   headline.classList.add('region-component-headline');
   content.classList.add('region-component-content');
+  img.classList.add('region-component-img');
   headline.innerHTML = title;
   paragraph.innerHTML = text;
   img.src = image;
+  img.alt = `Illustrated map of ${title}`;
+  img.height = 900;
+  img.width = 1600;
 
   content.append(img, paragraph);
   wrapper.append(headline, content);
