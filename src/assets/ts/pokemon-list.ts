@@ -11,15 +11,15 @@ function setInnerHTML(id: string, value: string = '') {
   document.getElementById(id).innerHTML = value;
 }
 
-export function createPokemonListItem(pokemon: Pokemon, idPrefix: string): string {
+function createPokemonListItem(pokemon: Pokemon, idPrefix: string): string {
   return `<li id="${idPrefix}-${pokemon.name}" class="my-hover">${pokemon.name}</li>`;
 }
 
-export function updateTeamSizeInfo() {
+function updateTeamSizeInfo() {
   document.getElementById('pokemon-team-count').innerHTML = `${myPokemonTeam.length}/${teamSize}`;
 }
 
-export function removePokemon(pokemon: Pokemon) {
+function removePokemon(pokemon: Pokemon) {
   setInnerHTML('pokemon-team-warning');
   myPokemonTeam = myPokemonTeam.filter(p => p !== pokemon);
   const prefix = 'team';
@@ -28,7 +28,7 @@ export function removePokemon(pokemon: Pokemon) {
   updateTeamSizeInfo();
 }
 
-export function selectPokemon(pokemon: Pokemon) {
+function selectPokemon(pokemon: Pokemon) {
   setInnerHTML('pokemon-team-warning');
   if (myPokemonTeam.length >= teamSize) {
     setInnerHTML('pokemon-team-warning', `Team is full. A team has at max ${teamSize} Pokemon`);
@@ -45,7 +45,7 @@ export function selectPokemon(pokemon: Pokemon) {
   updateTeamSizeInfo();
 }
 
-export async function loadPokemon() {
+async function loadPokemon() {
   const limit = pokemonCount;
   const offset = pokemonOffset;
   // https://pokeapi.co
@@ -62,13 +62,20 @@ export async function loadPokemon() {
   });
 }
 
-export function loadNextPokemon() {
+function loadNextPokemon() {
   pokemonOffset += pokemonCount;
   loadPokemon();
 }
 
-export function loadPreviousPokemon() {
+function loadPreviousPokemon() {
   if (pokemonOffset === 0) { return; }
   pokemonOffset -= pokemonCount;
   loadPokemon();
+}
+
+export default function setupPokemonTeamBuilder() {
+  updateTeamSizeInfo();
+  loadPokemon();
+  document.getElementById('pokemon-load-next').addEventListener('click', loadNextPokemon);
+  document.getElementById('pokemon-load-previous').addEventListener('click', loadPreviousPokemon);
 }

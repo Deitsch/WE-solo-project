@@ -2,9 +2,7 @@
 import '../styles/style.scss';
 import loadImages from './regions';
 import activateValidators from './about';
-import {
-  loadNextPokemon, loadPokemon, loadPreviousPokemon, updateTeamSizeInfo,
-} from './pokemon-list';
+import setupPokemonTeamBuilder from './pokemon-list';
 
 window.addEventListener('load', () => {
   if (document.getElementById('navigation') != null) {
@@ -14,7 +12,7 @@ window.addEventListener('load', () => {
     <nav class="h-full flex items-center justify-between">
       <h1>Pokemon Page</h1>
       <ul class="h-full flex justify-end items-center">
-        <li class="pr-2"><a href="index.html">Pokemon</a></li>
+        <li class="pr-2"><a href="index.html">Team Builder</a></li>
         <li class="pr-2"><a href="regions.html">Regions</a></li>
         <li class="pr-2"><a href="about.html">About</a></li>
       </ul>
@@ -22,10 +20,7 @@ window.addEventListener('load', () => {
   }
 
   if (document.getElementById('pokemon-list-page') != null) {
-    updateTeamSizeInfo();
-    loadPokemon();
-    document.getElementById('pokemon-load-next').addEventListener('click', loadNextPokemon);
-    document.getElementById('pokemon-load-previous').addEventListener('click', loadPreviousPokemon);
+    setupPokemonTeamBuilder();
   }
 
   if (document.getElementById('about-page') != null) {
