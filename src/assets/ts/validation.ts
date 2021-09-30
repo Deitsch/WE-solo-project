@@ -1,8 +1,12 @@
 import '../styles/validation.scss';
 
+const formName = <HTMLInputElement>document.getElementById('form-name');
+const formMail = <HTMLInputElement>document.getElementById('form-mail');
+const formNumber = <HTMLInputElement>document.getElementById('form-number');
+const formPw = <HTMLInputElement>document.getElementById('form-pw');
+
 export default function activateValidators() {
   console.log('validators active');
-  const formName = <HTMLInputElement>document.getElementById('form-name');
   formName.onkeyup = () => {
     if (/^[A-Za-z]{3,}$/.test(formName.value)) {
       formName.classList.remove('invalid');
@@ -11,7 +15,6 @@ export default function activateValidators() {
     }
   };
 
-  const formNumber = <HTMLInputElement>document.getElementById('form-number');
   formNumber.onkeyup = () => {
     if (/^[0-9]+$/.test(formNumber.value)) {
       formNumber.classList.remove('invalid');
@@ -20,7 +23,6 @@ export default function activateValidators() {
     }
   };
 
-  const formMail = <HTMLInputElement>document.getElementById('form-mail');
   formMail.onkeyup = () => {
     if (/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(formMail.value)) {
       formMail.classList.remove('invalid');
@@ -29,3 +31,20 @@ export default function activateValidators() {
     }
   };
 }
+
+const form = document.getElementById('about-form');
+form.onsubmit = () => {
+  let invalid = false;
+  [formMail, formName, formNumber, formPw].forEach(input => {
+    if (input.className.split(' ').indexOf('invalid') > -1 || input.value === '') {
+      invalid = true;
+    }
+  });
+  if (invalid) {
+    console.error('form was invalid');
+    return false;
+  }
+
+  console.log('form did submit');
+  return true;
+};
