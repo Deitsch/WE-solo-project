@@ -1,0 +1,7 @@
+.invalid {
+  @apply text-red-500;
+}
+
+.deitsch-input {
+  @apply outline-none ring-1 ring-deitsch-purple rounded-sm;
+}

@@ -9,31 +9,36 @@ module.exports = {
   // Use the src/index.js file as entry point to bundle it.
   // If the src/index.js file imports other JS files,
   // bundle them as well
-  entry: path.resolve(__dirname, './src/assets/ts/index.ts'),
+  entry: {
+    index: [path.resolve(__dirname, './src/assets/ts/index.ts')],
+  },
   // 2
   // The bundles source code files shall result in a bundle.js file
   // in the /dist folder
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
   },
   // 4
   // Add plugins for webpack here
   plugins: [
     new CleanWebpackPlugin(),
+    new FaviconsWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Pokemon Page',
+      title: 'Pokemon Page - Team',
       template: path.resolve(__dirname, './src/index.html'),
+      chunks: ['index'],
     }),
     new HtmlWebpackPlugin({
+      title: 'Pokemon Page - About',
       template: path.resolve(__dirname, './src/pages/about.html'),
       filename: 'about.html',
     }),
     new HtmlWebpackPlugin({
+      title: 'Pokemon Page - Regions',
       template: path.resolve(__dirname, './src/pages/regions.html'),
       filename: 'regions.html',
     }),
-    new FaviconsWebpackPlugin(),
   ],
   // 5
   // Integrate Babel in the build process

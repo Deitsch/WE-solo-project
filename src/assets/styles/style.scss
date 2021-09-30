@@ -2,12 +2,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-$body-color: red;
-
-body {
-  color: $body-color;
-}
-
 .my-hover {
   @apply cursor-pointer hover:text-deitsch-pink;
 }

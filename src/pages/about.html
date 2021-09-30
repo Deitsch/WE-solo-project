@@ -1,1 +1,46 @@
-<p>about</p>
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+  <meta name="description" content="Webpage for WEB 2021 - pokemon themed">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header id="navigation"></header>
+  <main id="about-page" class="px-4">
+    <section class="max-w-screen-lg mx-auto">
+      <h1 class="pt-3 text-2xl text-deitsch-purple">About</h1>
+      <p>This page should demo the use of webpack, typescript and friends before using a framework like Angular, React
+        or Vue. To get in touch send a message using the form below.</p>
+
+      <form id="aboutForm" method="get" class="mt-10">
+        <div>
+          <label for="form-name" class="block">Name: (At least 3 characters, no numbers)</label>
+          <input type="text" id="form-name" name="form-name" class="deitsch-input"/>
+        </div>
+
+        <div>
+          <label for="form-number">Age: (Only numbers)</label><br />
+          <input type="text" id="form-number" name="form-number" class="deitsch-input"/><br />
+        </div>
+        <div>
+          <label for="form-pw">Password: (At least eight characters, at least one letter, one number and one special character)</label><br />
+            <input type="password" id="form-pw" name="form-pw" class="deitsch-input"/><br />
+        </div>
+        <div>
+          <label for="form-mail">Email: (Valid email)</label><br />
+          <input type="text" id="form-mail" name="form-mail" class="deitsch-input"/><br />
+        </div>
+        <input type="submit" value="Submit" id="submit" class="bg-deitsch-pink hover:bg-deitsch-pink-light text-white px-4 py-2 rounded mt-4 cursor-pointer"/>
+      </form>
+    </section>
+  </main>
+</body>
+
+</html>

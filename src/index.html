@@ -8,17 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <header class="h-12 bg-gray-200 shadow px-4">
-      <nav class="h-full flex items-center justify-between">
-        <h1><%= htmlWebpackPlugin.options.title %></h1>
-        <ul class="h-full flex justify-end items-center">
-          <li class="pr-2"><a href="index.html">Pokemon</a></li>
-          <li class="pr-2"><a href="regions.html">Regions</a></li>
-          <li class="pr-2"><a href="about.html">About</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class="px-4">
+    <header id="navigation"></header>
+
+    <main id="pokemon-list-page" class="px-4">
       <section class="max-w-screen-lg mx-auto">
         <h1 class="pt-3 text-2xl text-deitsch-purple">Pokemon Team Builder</h1>
         <div class="pt-3">Select Pokemon for you Team. A Team can have 6 Pokemon in total. Each Pokemon may be taken once at max. Click on the Pokemon on the left to select it for you Team. Click on the right lsit to remove them from your team</div>
@@ -37,6 +29,5 @@
         </div>
       </section>
     </main>
-    <div id="app"></div>
   </body>
 </html>
