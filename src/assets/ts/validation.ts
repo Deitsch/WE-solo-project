@@ -20,15 +20,6 @@ export default function activateValidators() {
     }
   };
 
-  const formPw = <HTMLInputElement>document.getElementById('form-pw');
-  formPw.onkeyup = () => {
-    if (/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(formPw.value)) {
-      formPw.classList.remove('invalid');
-    } else {
-      formPw.classList.add('invalid');
-    }
-  };
-
   const formMail = <HTMLInputElement>document.getElementById('form-mail');
   formMail.onkeyup = () => {
     if (/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(formMail.value)) {
