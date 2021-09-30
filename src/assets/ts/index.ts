@@ -1,10 +1,10 @@
 /* eslint-disable import/no-unresolved */
 import '../styles/style.scss';
-// TODO: ask leon why this doesnt work!!
+import loadImages from './regions';
+import activateValidators from './about';
 import {
   loadNextPokemon, loadPokemon, loadPreviousPokemon, updateTeamSizeInfo,
 } from './pokemon-list';
-import activateValidators from './validation';
 
 window.addEventListener('load', () => {
   if (document.getElementById('navigation') != null) {
@@ -33,6 +33,6 @@ window.addEventListener('load', () => {
   }
 
   if (document.getElementById('regions-page') != null) {
-    console.log('regions');
+    loadImages();
   }
 });

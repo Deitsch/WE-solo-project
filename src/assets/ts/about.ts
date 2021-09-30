@@ -1,9 +1,10 @@
-import '../styles/validation.scss';
+import '../styles/about.scss';
 
 const formName = <HTMLInputElement>document.getElementById('form-name');
 const formMail = <HTMLInputElement>document.getElementById('form-mail');
 const formNumber = <HTMLInputElement>document.getElementById('form-number');
 const formPw = <HTMLInputElement>document.getElementById('form-pw');
+const form = document.getElementById('about-form');
 
 export default function activateValidators() {
   console.log('validators active');
@@ -30,21 +31,20 @@ export default function activateValidators() {
       formMail.classList.add('invalid');
     }
   };
-}
 
-const form = document.getElementById('about-form');
-form.onsubmit = () => {
-  let invalid = false;
-  [formMail, formName, formNumber, formPw].forEach(input => {
-    if (input.className.split(' ').indexOf('invalid') > -1 || input.value === '') {
-      invalid = true;
+  form.onsubmit = () => {
+    let invalid = false;
+    [formMail, formName, formNumber, formPw].forEach(input => {
+      if (input.className.split(' ').indexOf('invalid') > -1 || input.value === '') {
+        invalid = true;
+      }
+    });
+    if (invalid) {
+      console.error('form was invalid');
+      return false;
     }
-  });
-  if (invalid) {
-    console.error('form was invalid');
-    return false;
-  }
 
-  console.log('form did submit');
-  return true;
-};
+    console.log('form did submit');
+    return true;
+  };
+}
