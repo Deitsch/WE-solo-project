@@ -17,7 +17,7 @@ jobs: # define jobs to run
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }} # An explicit key for restoring and saving the cache
           restore-keys: ${{ runner.os }}-node- # An ordered list of keys to use for restoring the cache if no cache hit occurred for key
       - run: npm ci # install project dependencies
-      - run: npm run build --if-present # build the project
+      - run: npm run prod
       ## - run: npm run test:unit # run the tests
       # deploy site to netlify using secrets created on repository
       - uses: netlify/actions/cli@master # This Action enables arbitrary actions with the Netlify CLI
